@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnjomv85sftuu"]
+
+[ext_resource type="Script" path="res://scripts/kill_zone.gd" id="1_deuc6"]
+
+[sub_resource type="GDScript" id="GDScript_ol7xd"]
+script/source = "extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+
+func _on_timeout():
+	pass # Replace with function body.
+"
+
+[node name="KillZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_deuc6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+script = SubResource("GDScript_ol7xd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

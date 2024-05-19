@@ -4,6 +4,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_usjbn")
+damage = 5
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
